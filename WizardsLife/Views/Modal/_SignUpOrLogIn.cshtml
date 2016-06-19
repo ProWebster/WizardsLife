@@ -1,0 +1,68 @@
+﻿@model WizardsLife.Models.Modals.SignUpOrLogIn_VM
+
+Log in below if you already have an account!
+<br /><br />
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>Username</td>
+            <td>
+                @Html.EditorFor(x => x.LoginUsername)
+            </td>
+        </tr>
+
+        <tr>
+            <td>Password</td>
+            <td>
+                @Html.PasswordFor(x => x.LoginPassword)
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Log into Wizards Life" />
+}
+
+<br />
+OR... If you do not have an account yet - sign up now!<br />
+<br />
+
+@using (Html.BeginForm("SignUp", "Login", FormMethod.Post, new { type = "replace", replace = "#signUpError" }))
+{
+    <table>
+        <tr>
+            <td>
+                Username:
+            </td>
+            <td>
+                @Html.EditorFor(x=> x.SignUpUsername)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                E-mail:
+            </td>
+            <td>
+                @Html.EditorFor(x => x.SignUpEmail)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Password:
+            </td>
+            <td>
+                @Html.PasswordFor(x => x.SignUpPassword)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Repeat password:
+            </td>
+            <td>
+                @Html.PasswordFor(x => x.SignUpRepeatPassword)
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Sign up now" />
+
+    <div id="signUpError" style="color:#F00;"></div>
+}

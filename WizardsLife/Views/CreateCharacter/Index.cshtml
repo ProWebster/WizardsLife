@@ -1,0 +1,45 @@
+﻿@model WizardsLife.Models.CreateCharacter.CreateCharacter
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Create character";
+}
+
+<h1>Create your character</h1>
+
+<p>This game is all about roleplay! That means you have to create a character and from here on out, you really should stay in character - it'll be funnier for you AND your fellow students.<br />Please fill out the information below</p>
+
+@using (Html.BeginForm("Create", "CreateCharacter", FormMethod.Post, new { type = "replace", replace = "#createError" }))
+{
+<table>
+    <tr>
+        <td>Family name</td>
+        <td>
+            @Html.EditorFor(x => x.FamilyName)
+        </td>
+    </tr>
+    <tr>
+        <td>Name</td>
+        <td>
+            @Html.EditorFor(x => x.Name)
+        </td>
+    </tr>
+    <tr>
+        <td>Gender</td>
+        <td>
+            @Html.DropDownList("Gender", new SelectList(new[] { new { Value = (int)Lib.Entity.User.GenderType.Male, Text = "Male" }, new { Value = (int)Lib.Entity.User.GenderType.Female, Text = "Female" } }, "Value", "Text"))
+        </td>
+    </tr>
+    <tr>
+        <td>Blood status:</td>
+        <td>
+            @Html.DropDownList("BloodStatus", new SelectList(new[] { new { Value = (int)Lib.Entity.User.BloodStatusType.FullBlood, Text = "Full blood" },
+                                                                new { Value = (int)Lib.Entity.User.BloodStatusType.HalfBlood, Text = "Half blood" },
+                                                                new { Value = (int)Lib.Entity.User.BloodStatusType.Muggler, Text = "Muggler" }}
+                                                        , "Value", "Text"))
+        </td>
+    </tr>
+</table>
+<input type="submit" value="Create" />
+
+<div id="createError" style="color:#F00;"></div>
+}

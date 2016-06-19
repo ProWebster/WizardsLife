@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Wizards Life</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+
+    <div id="topBar">
+        <div class="contentArea">
+            <ul>
+                <li>Home</li>
+                <li>Rules</li>
+                <li>Contact</li>
+                <li>About</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="scoreBar" class="topBorderedBar">
+        <div class="contentArea">ScoreBoard</div>
+
+        <div class="centerScore"></div>
+    </div>
+
+    <div class="contentArea" style="background-color:#CCC; height:225px;"></div>
+
+    <div id="menuBar" class="topBorderedBar">
+        <div class="contentArea">
+            <ul>
+                <li>News</li>
+                <li>Hogwarts</li>
+                <li>Diagon alley</li>
+                <li>Quidditch</li>
+                <li>Roleplay</li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="content" class="contentArea">
+        <div class="contentArea">
+            @RenderBody()
+        </div>
+    </div>
+    
+    <div class="push"></div>
+
+    <div id="actionBar">
+        <div class="contentArea" style="height:100%;">
+
+            <ul class="actionBarItems inline">
+                <li onclick="showModalView('Owls', 800, '@Url.Action("Owls", "Modal")');" id="OwlsCount">
+                    @Lib.DatabaseManager.OwlManager.Current.MustReadCount(int.Parse(User.Identity.Name))
+                </li>
+                <li onclick="showModalView('Friends', 800, '@Url.Action("Friends", "Modal")');"></li>
+                <li></li>
+            </ul>
+
+            <div class="inline">
+                Quick-messages:
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="overlay" id="masterOverlay"></div>
+
+    <div class="modalView" id="mainModalView">
+        <div class="modalHeader">
+            <h2>Headline</h2>
+            
+            <img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-22-128.png" width="25" height="25" onclick="closeDialog(this);" />
+        </div>
+        <div class="modalContent">
+            Hej med dig!
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/custom")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

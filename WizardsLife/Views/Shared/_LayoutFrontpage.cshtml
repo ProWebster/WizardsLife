@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - Wizards Life</title>
+
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
+
+    @Styles.Render("~/Content/css")
+</head>
+<body>
+    <br /><br />
+    <div id="scoreBar" class="topBorderedBar">
+        <div class="contentArea">ScoreBoard</div>
+
+        <a href="#" onclick="showModalView('Sign up or log in', 400, '@Url.Action("SignUpOrLogIn", "Modal")');">
+            <div class="centerScore">
+                Sign up / Log in
+            </div>
+        </a>
+    </div>
+
+    <div class="contentArea" style="background-color:#CCC; height:225px;"></div>
+
+    <div id="menuBar" class="topBorderedBar">
+        <div class="contentArea">
+            <ul>
+                <li>Home</li>
+                <li>The game</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="content" class="contentArea">
+        <div class="contentArea">
+            @RenderBody()
+        </div>
+    </div>
+    
+    <div class="push"></div>
+
+
+    <div class="modalView" id="mainModalView">
+        <div class="modalHeader">
+            <h2>Headline</h2>
+
+            <img src="https://cdn0.iconfinder.com/data/icons/slim-square-icons-basics/100/basics-22-128.png" width="25" height="25" onclick="closeDialog(this);" />
+        </div>
+        <div class="modalContent">
+            Hej med dig!
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/custom")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

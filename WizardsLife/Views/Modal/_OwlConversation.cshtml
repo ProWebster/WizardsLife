@@ -1,0 +1,34 @@
+﻿@model WizardsLife.Models.Modals.Owls.Conversation_VM
+
+<script type="text/javascript">
+    $('#OwlsCount').html(@ViewData["OwlsCount"]);
+</script>
+
+
+@{ 
+    foreach (Lib.Entity.Owl owl in Model.Conversation.Owls)
+    {
+        <table style="margin-bottom:20px; width:100%;">
+            <tr style="font-weight:bold;">
+                <td>From: @owl.User.FullCharName</td>
+                <td style="width:150px;">@owl.Sent.ToString("g")</td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    @Html.Raw(@owl.Content)
+                </td>
+            </tr>
+        </table>
+    }
+}
+
+
+<b>Reply below</b><br />
+
+@using (Html.BeginForm("OwlReply", "Modal", FormMethod.Post, new { type = "replace", replace = "#owlContent", responseType = "PartialView" }))
+{
+    <input type="hidden" name="Conversation.Id" value="@Model.Conversation.Id" />
+    <textarea style="width:100%; height:100px; max-width:99%;" name="ReplyContent">@Model.ReplyContent</textarea>
+    <br />
+    <input type="submit" value="Make your owl fly" />
+}

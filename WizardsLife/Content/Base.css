@@ -1,0 +1,194 @@
+﻿html, body {
+    margin:0px;
+    padding:0px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background:url('/Images/background.jpg') no-repeat center top fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#topBar {
+    width:100%;
+    height:35px;
+    line-height:35px;
+    background-color:#2F2F2F;
+    color:#999;
+    font-weight:bold;
+}
+
+#topBar ul {
+    list-style:none;
+    margin:0px;
+    padding:0px;
+}
+
+#topBar ul li {
+    display:inline-block;
+    margin-right:40px;
+}
+
+.topBorderedBar {
+    width:1280px;
+    height:57px;
+    line-height:45px;
+    margin:0 auto;
+    color:#FFF;
+    position:relative;
+}
+
+#scoreBar {
+    margin-top:75px;
+    background:url('/Images/scoreBoard.png') no-repeat;
+}
+
+#menuBar {
+    background:url('/Images/menu.png') no-repeat;
+}
+
+#menuBar .contentArea {
+    top:12px;
+    position:absolute;
+}
+
+#menuBar ul {
+    list-style:none;
+    margin:0px;
+    padding:0px;
+    text-align:center;
+    width:100%;
+    height:45px;
+}
+
+#menuBar ul li {
+    display:inline-block;
+    padding: 0 80px;
+    height:45px;
+}
+
+#menuBar ul li:hover {
+    background-color:rgba(255, 255, 255, 0.1);
+    cursor:pointer;
+}
+
+
+.centerScore {
+    height:184px;
+    width:184px;
+    top:-99px;
+    left:50%;
+    margin-left:-92px;
+    position:absolute;
+    background:url('/Images/Cards/SignUp.png');
+    line-height:186px;
+    text-align:center;
+    color:#FFF;
+}
+
+
+.contentArea {
+    width:1236px;
+    margin:0 auto;
+}
+
+#content {
+    background-color:#CCC;
+    margin-top:30px;
+    border-radius:3px;
+}
+
+#content .contentArea {
+    padding:20px;
+}
+
+
+#actionBar {
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    height:50px;
+    line-height:50px;
+    background-color:rgba(54,35,101, 0.8);
+    color:#FFF;
+}
+
+.inline {
+    display:inline-block;
+}
+
+.actionBarItems {
+    list-style:none;
+    margin:0px;
+    padding:0px;
+    margin-right:30px;
+}
+
+.actionBarItems li {
+    display:inline-block;
+    background-color:#FFF;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    width:40px;
+    border-radius:20px;
+    vertical-align:middle;
+    margin-left:15px;
+    cursor:pointer;
+    color:#000;
+}
+
+.overlay {
+    position:fixed;
+    display:none;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    background-color:rgba(0,0,0,0.5);
+    z-index:1000;
+}
+
+.modalView {
+    position:fixed;
+    background-color:#FFF;
+    z-index:1001;
+    display:none;
+    left:50%;
+    top:100px;
+    padding:20px;
+    box-shadow:0 0 10px #444;
+    border-radius:3px;
+}
+
+.modalView .modalHeader {
+    position:relative;
+}
+
+.modalView .modalHeader h2 {
+    margin:0px;
+    padding-bottom:10px;
+}
+
+.modalView .modalHeader img {
+    position:absolute;
+    right:0px;
+    top:0px;
+    cursor:pointer;
+}
+
+.modalView .modalHeader img:hover {
+    opacity:0.7;
+}
+
+.modalView .modalContent {
+    overflow:auto;
+}
+
+.push {
+    height:70px;
+}

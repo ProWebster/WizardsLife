@@ -1,0 +1,13 @@
+﻿@model WizardsLife.Models.Sorting.SortingQuestion
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Sorting Hat";
+}
+
+<h1>Welcome to hogwarts</h1>
+
+<p>Answer the following questions to get sorted into your house!</p>
+
+<div id="QuestionArea">
+    @Html.Partial("_SortingQuestion", Model)
+</div>

@@ -1,0 +1,36 @@
+﻿@model WizardsLife.Models.Modals.Owls.Owls_VM
+
+<div id="owlContent">
+    <p>Create a new conversation below, or go ahead and continue an existing one :)</p>
+
+    <table style="width:100%; line-height:30px;">
+        <tr style="font-weight:bold;">
+            <td>Subject</td>
+            <td>Created</td>
+            <td>Latest owl</td>
+            <td>Actions</td>
+        </tr>
+        @{
+            foreach (Lib.Entity.OwlConversation conversation in Model.Conversations)
+            {
+                <tr style="@((conversation.MustRead(int.Parse(User.Identity.Name))) ? @"color:#900; font-weight:bold;" : "")">
+                    <td>
+                        @conversation.Subject
+                    </td>
+                    <td>
+                        @conversation.Created.ToString("g")
+                    </td>
+                    <td>
+                        @conversation.Owls.LastOrDefault().Sent.ToString("g") by @conversation.Owls.LastOrDefault().User.FullCharName
+                    </td>
+                    <td>
+                        <input type="button" value="Open" onclick="ajaxRequest('Conversation: @conversation.Subject', '#owlContent', '@Url.Action("OpenConversation", "Modal")', 'conversationId=@conversation.Id')" />
+                    </td>
+                </tr>
+            }
+        }
+
+    </table>
+    <br /><br />
+    <input type="button" value="Create new conversation" onclick="ajaxRequest('Create conversation', '#owlContent', '@Url.Action("OpenCreateConversation", "Modal")', '')" />
+</div>

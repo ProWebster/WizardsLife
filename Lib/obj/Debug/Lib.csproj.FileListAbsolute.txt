@@ -1,0 +1,8 @@
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\WizardsLife\Lib\bin\Debug\Lib.dll.config
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\WizardsLife\Lib\bin\Debug\Lib.dll
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\WizardsLife\Lib\bin\Debug\Lib.pdb
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\WizardsLife\Lib\bin\Debug\MySql.Data.dll
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\WizardsLife\Lib\bin\Debug\MySql.Web.dll
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\WizardsLife\Lib\obj\Debug\Lib.csprojResolveAssemblyReference.cache
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\WizardsLife\Lib\obj\Debug\Lib.dll
+C:\Users\Benjamin\Documents\Visual Studio 2015\Projects\WizardsLife\Lib\obj\Debug\Lib.pdb

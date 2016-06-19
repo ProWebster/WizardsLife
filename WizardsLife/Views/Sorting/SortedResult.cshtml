@@ -1,0 +1,9 @@
+﻿@model WizardsLife.Models.Sorting.SortedResult
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Your house";
+}
+
+<h1>You have been sorted into @Model.House.ToString()</h1>
+
+<a href="@Url.Action("Index", "News")">Enter Hogwarts!</a>

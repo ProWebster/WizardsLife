@@ -1,0 +1,12 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Diagon alley";
+}
+
+Time for shopping!
+
+
+@using (Html.BeginForm("DoneShopping", "Shopping", FormMethod.Post))
+{
+    <input type="submit" value="Done shopping" />
+}

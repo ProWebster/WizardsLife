@@ -1,0 +1,23 @@
+﻿@model WizardsLife.Models.Sorting.SortingQuestion
+
+@{ 
+    Random rnd = new Random();
+    IEnumerable<int> answerOptions = new List<int> { 0, 1, 2, 3 }.OrderBy(x=>rnd.Next());
+}
+
+@using (Html.BeginForm("AnswerQuestion", "Sorting", FormMethod.Post, new { type = "replace", replace = "#QuestionArea", responseType = "PartialView" }))
+{
+    <input id="Question_QuestionNo" name="Question.QuestionNo" type="hidden" value="@(Model.Question.QuestionNo)">
+
+    <p style="font-weight:bold;">Question: @(Model.Question.QuestionNo). @(Model.Question.Question)</p>
+
+    
+        foreach (int index in answerOptions)
+        {
+            <p>@(Model.Question.Options[index].Value): <input type="radio" name="Value" value="@Model.Question.Options[index].Key" /></p>
+        }
+    
+
+    <br />
+    <input type="submit" value="Save response" />
+}
